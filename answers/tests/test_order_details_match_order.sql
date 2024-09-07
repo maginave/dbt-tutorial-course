@@ -21,7 +21,7 @@ SELECT
     o.*,
     od.*
 
-FROM {{ ref('stg_ecommerce__orders') }} AS o
+FROM {{ ref("stg_ecommerce__orders") }} AS o
 FULL OUTER JOIN order_details AS od USING(order_id)
 WHERE
     -- All orders should have at least 1 item, and every item should tie to an order
